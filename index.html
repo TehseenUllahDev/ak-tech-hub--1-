@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AK Tech Hub Pvt. Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              'primary-light': 'var(--color-primary-light)',
+              accent: 'var(--color-accent)',
+              'accent-hover': 'var(--color-accent-hover)',
+              'accent-glow': 'var(--color-accent-glow)',
+              'text-main': 'var(--color-text-main)',
+              'text-muted': 'var(--color-text-muted)',
+              'text-invert': 'var(--color-text-invert)',
+              'text-on-invert': 'var(--color-text-on-invert)',
+              'ui-panel': 'var(--color-panel-bg)',
+              'ui-input': 'var(--color-input-bg)',
+              'ui-border': 'var(--color-border)',
+              'ui-panel-dark': 'rgba(0, 0, 0, 0.2)',
+              'ui-panel-light': 'rgba(255, 255, 255, 0.1)',
+            },
+            fontFamily: {
+               sans: ['Inter', 'sans-serif'],
+               display: ['Orbitron', 'sans-serif'],
+            },
+            animation: {
+              'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              'pulse-glow': {
+                '0%, 100%': { opacity: 1, boxShadow: '0 0 20px var(--color-accent)' },
+                '50%': { opacity: .7, boxShadow: '0 0 5px var(--color-accent)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Default: Cyber Blue (Dark) */
+        --color-primary: #0f172a;       /* Slate 900 */
+        --color-primary-light: #1e293b; /* Slate 800 */
+        --color-accent: #3b82f6;        /* Blue 500 */
+        --color-accent-hover: #2563eb;  /* Blue 600 */
+        --color-accent-glow: #60a5fa;   /* Blue 400 */
+        
+        --color-text-main: #f8fafc;     /* Slate 50 */
+        --color-text-muted: #94a3b8;    /* Slate 400 */
+        --color-text-invert: #ffffff;   /* White (for buttons on dark bg) */
+        --color-text-on-invert: #0f172a; /* Slate 900 */
+        
+        --color-input-bg: rgba(15, 23, 42, 0.6);
+        --color-panel-bg: rgba(30, 41, 59, 0.4);
+        --color-border: rgba(255, 255, 255, 0.1);
+        --shadow-color: rgba(0, 0, 0, 0.5);
+        
+        /* Add contrast variables */
+        --contrast-text: #ffffff;
+        --contrast-bg: rgba(0, 0, 0, 0.8);
+      }
+
+      .theme-light {
+        /* Cyber Blue (Light) - Enhanced for better visibility */
+        --color-primary: #f8fafc;       /* Slate 50 */
+        --color-primary-light: #ffffff; /* White */
+        --color-accent: #1d4ed8;        /* Darker Blue for better visibility */
+        --color-accent-hover: #1e40af;  /* Even darker for hover */
+        --color-accent-glow: #3b82f6;   /* Blue 500 */
+        
+        --color-text-main: #0f172a;     /* Slate 900 */
+        --color-text-muted: #475569;    /* Slate 600 - Darker for better visibility */
+        --color-text-invert: #0f172a;   /* Slate 900 */
+        --color-text-on-invert: #ffffff; /* White */
+        
+        --color-input-bg: #f1f5f9;      /* Slate 100 */
+        --color-panel-bg: rgba(255, 255, 255, 0.95); /* More opaque for better contrast */
+        --color-border: #94a3b8;        /* Slate 400 - Darker border */
+        --shadow-color: rgba(0, 0, 0, 0.15);
+        
+        /* Light theme contrast */
+        --contrast-text: #0f172a;
+        --contrast-bg: rgba(255, 255, 255, 0.95);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-primary); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-primary-light); 
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-accent); 
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      body {
+        background-color: var(--color-primary);
+        color: var(--color-text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      
+      /* Enhanced transitions for theme switching */
+      * {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+      
+      /* High contrast utility classes */
+      .high-contrast-text {
+        color: var(--contrast-text) !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+      
+      .high-contrast-bg {
+        background-color: var(--contrast-bg) !important;
+        backdrop-filter: blur(10px);
+      }
+      
+      .text-contrast {
+        color: var(--contrast-text);
+      }
+      
+      .bg-contrast {
+        background-color: var(--contrast-bg);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.0"
+  }
+}
+</script>
+</head>
+  <body class="dark">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
